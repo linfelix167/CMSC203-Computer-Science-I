@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Control">
+   <children>
+      <Label layoutX="83.0" layoutY="14.0" text="Company:" />
+      <Label fx:id="CompanyNameLabel" layoutX="151.0" layoutY="14.0" text="Wacky Widgets" />
+      <TitledPane animated="false" layoutX="18.0" layoutY="37.0" prefHeight="304.0" prefWidth="367.0" text="Add Employee">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TitledPane animated="false" layoutX="8.0" layoutY="7.0" prefHeight="72.0" prefWidth="350.0" text="Position">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <RadioButton fx:id="ManagerRadio" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#radioButtonListener" text="Manager">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="g1" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="DesignRadio" layoutX="92.0" layoutY="13.0" mnemonicParsing="false" onAction="#radioButtonListener" text="Design" toggleGroup="$g1" />
+                              <RadioButton fx:id="SalesRadio" layoutX="159.0" layoutY="13.0" mnemonicParsing="false" onAction="#radioButtonListener" text="Sales" toggleGroup="$g1" />
+                              <RadioButton fx:id="ManufacturingRadio" layoutX="224.0" layoutY="13.0" mnemonicParsing="false" onAction="#radioButtonListener" text="Manufacturing" toggleGroup="$g1" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <Label layoutX="18.0" layoutY="88.0" text="ID: " />
+                  <Label layoutX="19.0" layoutY="122.0" text="First Name:" />
+                  <Label layoutX="19.0" layoutY="151.0" text="Last Name:" />
+                  <TextField fx:id="IdText" layoutX="138.0" layoutY="83.0" />
+                  <TextField fx:id="FNameText" layoutX="138.0" layoutY="117.0" />
+                  <TextField fx:id="LNameText" layoutX="138.0" layoutY="146.0" />
+                  <Button fx:id="AddButton" layoutX="25.0" layoutY="235.0" mnemonicParsing="false" onAction="#add" text="Add Employee" />
+                  <Button fx:id="RemoveButton" layoutX="147.0" layoutY="235.0" mnemonicParsing="false" onAction="#remove" text="Remove Employee" />
+                  <Button fx:id="ClearButton" layoutX="292.0" layoutY="235.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
+                  <Label fx:id="SalaryLabel" layoutX="22.0" layoutY="185.0" text="Salary:" visible="false" />
+                  <TextField fx:id="SalaryText" layoutX="138.0" layoutY="180.0" visible="false" />
+                  <Label fx:id="PriceRateLabel" layoutX="22.0" layoutY="177.0" text="Piece rate:" visible="false" />
+                  <TextField fx:id="PriceRateText" layoutX="138.0" layoutY="172.0" visible="false" />
+                  <Label fx:id="piecesLabel" layoutX="22.0" layoutY="207.0" text="# pieces:" visible="false" />
+                  <TextField fx:id="piecesText" layoutX="138.0" layoutY="202.0" visible="false" />
+                  <Label fx:id="PayrateLabel" layoutX="22.0" layoutY="177.0" text="Pary rate:" visible="false" />
+                  <TextField fx:id="PayrateText" layoutX="138.0" layoutY="172.0" visible="false" />
+                  <Label fx:id="HoursLabel" layoutX="22.0" layoutY="207.0" text="Hours:" visible="false" />
+                  <TextField fx:id="HoursText" layoutX="138.0" layoutY="202.0" visible="false" />
+                  <TextField fx:id="WeeklySaleText" layoutX="138.0" layoutY="181.0" visible="false" />
+                  <Label fx:id="WeeklySaleLabel" layoutX="26.0" layoutY="186.0" text="Weekly Sales:" visible="false" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <Button fx:id="PrintCompanyButton" layoutX="44.0" layoutY="349.0" mnemonicParsing="false" onAction="#printCompany" text="Print Company Employees" />
+      <Button fx:id="PrintWeeklyButton" layoutX="118.0" layoutY="384.0" mnemonicParsing="false" onAction="#printWeek" text="Print Weekly Pay Report" />
+      <Button fx:id="WriteButton" layoutX="239.0" layoutY="349.0" mnemonicParsing="false" onAction="#write" text="Write to File" />
+      <Button fx:id="ExitButton" layoutX="181.0" layoutY="419.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Exit" />
+   </children>
+</AnchorPane>
